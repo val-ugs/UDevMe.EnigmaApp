@@ -1,0 +1,32 @@
+@import '../../styles/variables';
+@import '../../styles/media_mixin';
+  
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $headerColor;
+  font-size: 72px;
+  color: $titleColor;
+
+  &__element {
+    padding: 15px;
+  }
+
+  &__logo {
+  }
+
+  &__logo-image {
+  }
+
+  &__title {
+  }
+
+  @include _900 {
+    font-size: 40px;
+
+    &__logo-image {
+      width: 150px;
+    }
+  }
+}

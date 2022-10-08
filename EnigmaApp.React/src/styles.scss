@@ -1,0 +1,40 @@
+// Reset
+@import 'styles/reset';
+
+@import 'styles/fonts';
+@import 'styles/variables';
+
+html,
+body {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $fontFamily;
+  font-weight: 400;
+  background-color: $mainColor;
+}
+
+// Wrapper
+.wrapper {
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  // Site loaded
+  .loaded & {
+  }
+}
+
+// Container
+.container {
+  
+}
+
+// Main block
+.page {
+
+}

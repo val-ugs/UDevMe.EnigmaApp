@@ -1,0 +1,86 @@
+@import '../../styles/variables';
+  
+.main {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  color: $textColor;
+  font-size: 20px;
+
+  &__output {
+    padding: 15px;
+  }
+
+  &__output-top {
+    display: flex;
+    padding-bottom: 15px;
+  }
+
+  &__output-bottom {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__output-list {
+    padding: 15px 0;
+  }
+
+  &__output-letter {
+    border: 1px solid $tableBorderColor;
+    padding: 5px;
+    background: $tableBackgroundColor;
+    text-align: center;
+  }
+
+  &__output-arrow {
+    padding: 0 5px;
+  }
+  
+  &__elements {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  &__elements-top {
+    display: flex;
+  }
+
+  &__elements-bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 360px;
+    width: 100%;
+  }
+
+  &__elements-bottom {
+    display: flex;
+    justify-content: space-between;
+    height: 360px;
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  &__element {
+  }
+
+  &__element-top {
+  }
+
+  &__element-bottom {
+    padding-right: 45px;
+  }
+
+  &__text-resize {
+    margin: 10px;
+    border: 5px solid $errorColor;
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    color: $errorColor;
+  }
+}

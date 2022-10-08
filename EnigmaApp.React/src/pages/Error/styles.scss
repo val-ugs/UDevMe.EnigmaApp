@@ -1,0 +1,35 @@
+@import '../../styles/_variables';
+
+.error {
+  text-align: center;
+  font-size: 48px;
+  color: $errorColor;
+
+  &__element {
+    margin: 10px;
+  }
+
+  &__text{
+  }
+  
+  &__code{
+  }
+
+  &__message {
+  }
+  
+  &__button {
+    padding: 10px;
+    font-size: 48px;
+    background-color: $tableBackgroundColor;
+    color: $textColor;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 1;
+    }
+  }
+}

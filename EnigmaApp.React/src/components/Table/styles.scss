@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+@import '../../styles/media_mixin';
+  
+.table {
+  border-collapse: collapse;
+}
+
+.table td {
+  border: 1px solid $tableBorderColor;
+  padding: 5px;
+  background: $tableBackgroundColor;
+  text-align: center;
+  font-size: 24px;
+}

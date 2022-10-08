@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+@import '../../styles/media_mixin';
+  
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  color: $textColor;
+
+  &__elements {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &__element {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+
+  &__label {
+    padding: 0 5px;
+  }
+
+  &__text {
+    width: 450px;
+    font-size: 24px;
+  }
+
+  &__patch-panel {
+    width: 700px;
+    font-size: 24px;
+  }
+
+  &__invalid {
+    color: $errorColor;
+  }
+
+  @include _900 {
+    &__text {
+      width: 280px;
+      font-size: 20px;
+    }
+
+    &__patch-panel {
+      width: 200px;
+      font-size: 20px;
+    }
+  }
+}
+

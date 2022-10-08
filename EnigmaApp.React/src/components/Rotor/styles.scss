@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+  
+.rotor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+
+    button {
+      margin: 0 100px;
+      padding: 5px;
+    }
+  }
+
+  &__disks-container {
+    width: 100%;
+  }
+
+  &__disks {
+    position: relative;
+    left: -5%;
+    margin: 5px;
+  }
+
+  &__disk-container {
+    position: absolute;
+    width: 50%;
+    top: 45%;
+    left: 25%;
+  }
+
+  &__disk-small {
+    width: 100%;
+    padding: 0;
+  }
+
+  &__value {
+    position: absolute;
+    left: 49.4%;
+    top: -10.8%;
+    height: 36px;
+    width: 36px;
+    background: $selectColor;
+    z-index: -1;
+  }
+
+  &__number {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    font-size: 64px;
+  }
+}
+

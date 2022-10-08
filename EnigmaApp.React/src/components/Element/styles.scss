@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+  
+.element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  
+  &__name {
+    font-size: 32px;
+    padding-bottom: 10px;
+  }
+
+  &__children {
+    height: 100%;
+  }
+}

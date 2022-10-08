@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+  
+.footer {
+  padding: 20px;
+  background-color: $footerColor;
+  text-align: center;
+  font-size: 16px;
+  color: $textColor;
+}

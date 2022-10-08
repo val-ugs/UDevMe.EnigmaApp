@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+  
+.counter {
+  display: flex;
+  align-items: center;
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+  }
+
+  &__button {
+    height: 20px;
+    width: 30px;
+  }
+
+  &__button-up {
+    div {
+      transform: rotate(180deg)
+    }
+  }
+
+  &__button-down {
+  }
+}
