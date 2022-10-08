@@ -9,7 +9,7 @@
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "uugs",
+  "author": "ugs",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
