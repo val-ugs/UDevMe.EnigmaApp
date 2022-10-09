@@ -148,7 +148,8 @@ function Canvas({
     // Direct
     ctx.beginPath()
     ctx.moveTo(x_1[alphabet.indexOf(list[0])], 790)
-    ctx.lineTo(x_1[alphabet.indexOf(list[1])], 510)
+    ctx.lineTo(x_1[alphabet.indexOf(list[1])], 520)
+    ctx.lineTo(x_1[alphabet.indexOf(list[1])], 490)
     const index = (alphabet.indexOf(list[2]) - rotor1Shift % size + size) % size
     ctx.lineTo(x_2[index], y_2[index])
     const index2 = (alphabet.indexOf(list[3]) - rotor1Shift % size + size) % size
@@ -183,7 +184,8 @@ function Canvas({
     ctx.lineTo(x_3[index13], y_3[index13])
     const index14 = (alphabet.indexOf(list[15]) - rotor1Shift % size + size) % size
     ctx.lineTo(x_2[index14], y_2[index14])
-    ctx.lineTo(x_1[alphabet.indexOf(list[16])], 510)
+    ctx.lineTo(x_1[alphabet.indexOf(list[16])], 490)
+    ctx.lineTo(x_1[alphabet.indexOf(list[16])], 520)
     ctx.lineTo(x_1[alphabet.indexOf(list[17])], 790)
     ctx.strokeStyle = 'cyan'
     ctx.stroke()
