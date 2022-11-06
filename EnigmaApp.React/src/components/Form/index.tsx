@@ -8,6 +8,7 @@ import './styles.scss'
 
 interface FormProps {
   alphabet: string
+  text: string
   setText: (text: string) => void
   setPatchPanel: (patchPanel: string) => void
   setRotor1: (rotor: RotorProps) => void
@@ -21,6 +22,7 @@ interface FormProps {
 
 function Form({
   alphabet,
+  text,
   setText,
   setPatchPanel,
   setRotor1,
@@ -112,10 +114,11 @@ function Form({
     <form className="form">
       <div className="form__element">
         <label htmlFor="text" className="form__label">
-          Word:
+          Input:
         </label>
         <input
           type="text"
+          value={text}
           placeholder="WORD"
           maxLength={32}
           required

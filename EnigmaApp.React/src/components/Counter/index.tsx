@@ -9,7 +9,7 @@ interface CounterProps {
 function Counter({ setValue }: CounterProps) {
   const [count, setCount] = useState<number>(0)
   const maxValue = 100
-  const minValue = -100
+  const minValue = 0
 
   const IncrementHandler = useCallback(
     (e: React.MouseEvent<HTMLElement>) => {

@@ -87,17 +87,15 @@ export default function Main() {
 
   useEffect(() => {
     fetchData()
-  }, [
-    text,
-    patchPanel,
-    rotor1,
-    rotor1Shift,
-    rotor2,
-    rotor2Shift,
-    rotor3,
-    rotor3Shift,
-    reflector,
-  ])
+  }, [text, patchPanel, rotor1, rotor2, rotor3, reflector])
+
+  useEffect(() => {
+    setRotor1ElementShift(rotor1Shift % alphabet.length)
+    setRotor2ElementShift(rotor2Shift % alphabet.length)
+    setRotor3ElementShift(rotor3Shift % alphabet.length)
+    setText('')
+    setOutputText('')
+  }, [rotor1Shift, rotor2Shift, rotor3Shift])
 
   useEffect(() => {
     if (rotor1 == null || rotor2 == null || rotor3 == null) return
@@ -107,26 +105,28 @@ export default function Main() {
 
     setRotor1ElementShift((rotor1Shift + shift) % alphabet.length)
 
-    TryChangeRotorShift(
+    TryChangeRotor2Shift(
       rotor1ElementShift,
       rotor1.turnover,
-      (rotor2Shift + rotor2ElementShift) % alphabet.length,
+      rotor2ElementShift % alphabet.length,
       setRotor2ElementShift,
       isRotateRight
     )
 
-    TryChangeRotorShift(
+    TryChangeRotor3Shift(
+      rotor1ElementShift,
+      rotor1.turnover,
       rotor2ElementShift,
       rotor2.turnover,
-      (rotor3Shift + rotor3ElementShift) % alphabet.length,
+      rotor3ElementShift % alphabet.length,
       setRotor3ElementShift,
       isRotateRight
     )
 
     setPreviousTextSize(text.length)
-  }, [text, rotor1Shift, rotor2Shift, rotor3Shift])
+  }, [text])
 
-  function TryChangeRotorShift(
+  function TryChangeRotor2Shift(
     shift: number,
     turnover: string,
     rotorElementShift: number,
@@ -145,6 +145,35 @@ export default function Main() {
         else setRotorElementShift(rotorElementShift - 1)
   }
 
+  function TryChangeRotor3Shift(
+    shift1: number,
+    turnover1: string,
+    shift2: number,
+    turnover2: string,
+    rotorElementShift: number,
+    setRotorElementShift: (value: number) => void,
+    isRotateRight: boolean
+  ) {
+    const currentShift1 = isRotateRight
+      ? shift1
+      : shift1 == 0
+      ? alphabet.length - 1
+      : shift1 - 1
+
+    const currentShift2 = isRotateRight
+      ? shift2
+      : shift2 == 0
+      ? alphabet.length - 1
+      : shift2 - 1
+
+    for (let i = 0; i < turnover1.length; i++)
+      if (currentShift1 == alphabet.indexOf(turnover1[i]))
+        for (let i = 0; i < turnover2.length; i++)
+          if (currentShift2 == alphabet.indexOf(turnover2[i]))
+            if (isRotateRight) setRotorElementShift(rotorElementShift + 1)
+            else setRotorElementShift(rotorElementShift - 1)
+  }
+
   const handleResize = () => {
     SetShowElements(window.innerWidth >= 1200 ? true : false)
   }
@@ -157,6 +186,7 @@ export default function Main() {
     <div className="main">
       <Form
         alphabet={alphabet}
+        text={text}
         setText={setText}
         setPatchPanel={setPatchPanel}
         setRotor1={setRotor1}
@@ -170,9 +200,7 @@ export default function Main() {
       {outputText && (
         <div className="main__output">
           <div className="main__output-top">
-            <div className="main__output-label">
-              Encrypted Text: {outputText}
-            </div>
+            <div className="main__output-label">Output: {outputText}</div>
           </div>
           <div className="main__output-bottom">
             {outputLastCharLetters &&
